@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -44,21 +43,12 @@ class App extends Component {
   render() {
     let _translate = "translate(" + this.state.countX + " " + this.state.countY + ")"; 
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <div className="GameContainer">
-          <svg className="hero" xmlns="http://www.w3.org/2000/svg" role="presentation">
-            <g>
-              <text fill="white" transform={_translate}>@</text>
-            </g>
-          </svg>  
-        </div>
+      <div className="GameContainer">
+        <svg className="hero" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="presentation">
+          <g>
+            <text fill="white" transform={_translate}>@</text>
+          </g>
+        </svg>  
       </div>
     );
   }
