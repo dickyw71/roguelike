@@ -1,10 +1,25 @@
 .App {
-  text-align: center;
+  position: relative;
 }
 
 .GameContainer {
-  margin: 0 auto;
-  width: 90%;
-  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 1300px;
+  max-height: 650px;
+  margin: auto;
+  overflow: hidden;
   background-color: dimgray;
+}
+
+.hero {
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  max-width: 1300px;
+  max-height: 650px;
 }
