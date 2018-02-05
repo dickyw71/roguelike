@@ -44,9 +44,14 @@ class App extends Component {
     let _translate = "translate(" + this.state.countX + " " + this.state.countY + ")"; 
     return (
       <div className="GameContainer">
-        <svg className="game" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" role="presentation">
+        <svg className="MessagesContainer" xmlns="http://www.w3.org/2000/svg" width="300" height="100" viewBox="0 0 300 100" role="presentation">
           <g>
-            <text className="hero" fill="white" transform={_translate}>@</text>
+            <text className="messages" fill="black">Messages will go here.</text>
+          </g>
+        </svg>
+        <svg className="MapContainer" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" role="presentation">
+          <g>
+            <text className="Hero" fill="white" transform={_translate}>@</text>
           </g>
         </svg>  
       </div>
