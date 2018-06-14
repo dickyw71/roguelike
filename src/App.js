@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import * as Board from './board.js'; 
+import DungeonGrid from './dungeon.js';
 
 class App extends Component {
   constructor(props) {
@@ -57,6 +58,7 @@ class App extends Component {
         <svg className="MapContainer" xmlns="http://www.w3.org/2000/svg" role="presentation">
           <g>
             <text className="Hero" fill="pink" transform={_translateHero}>@</text>
+            <DungeonGrid board={this.state.board} />
           </g>
         </svg>  
         <svg className="StatusContainer" xmlns="http://www.w3.org/2000/svg" role="presentation">
