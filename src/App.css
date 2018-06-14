@@ -4,8 +4,9 @@
 
 .GameContainer {
   display: grid;
-  grid: repeat(3, 30vh) / auto-flow 40vh;
-  position: absolute;
+  /* grid: repeat(3, 30vh) / auto-flow 40vh; */
+  grid-template-rows: 10vh 60vh 10vh;
+  /* position: absolute; */
   top: 0;
   left: 0;
   right: 0;
@@ -14,15 +15,15 @@
   max-height: 650px;
   margin: auto;
   overflow: hidden;
-  background-color: dimgray;
+  /* background-color: dimgray; */
 }
 
 .MessagesContainer {
-  position: relative;
+  /* position: relative; */
   top: 1vh;
   left: 1vw;
   width: 98vw;
-  height: 10vh;
+  /* height: 10vh; */
   max-width: 1300px;
   max-height: 650px;
   border: 1px khaki solid;
@@ -30,26 +31,30 @@
 }
 
 .MapContainer {
-  position: relative;
-  top: -18vh;
+  /* position: relative; */
+  /* top: -18vh; */
   left: 1vw;
   width: 98vw;
-  height: 60vh;
+  /* height: 60vh; */
   max-width: 1300px;
-  max-height: 650px;
+  /* max-height: 650px; */
   border: 1px salmon solid;
-  background: grey;
+  /* background: grey; */
 }
 
 .StatusContainer {
-  position: relative;
+  /* position: relative; */
   top: 20vh;
   left: 1vw;
   /* bottom: 0px; */
   width: 98vw;
-  height: 10vh;
+  /* height: 10vh; */
   max-width: 1300px;
   max-height: 650px;
   border: 1px greenyellow solid;  
-  background: plum;
+  /* background: plum; */
+}
+
+.Dude {
+  background: red;
 }
