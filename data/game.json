@@ -1,0 +1,7 @@
+{
+    "characters": [
+        {"name": "Elrond", "race": "Forest Elf", "weapon": "Bow", "health": "100", "level": "5"},
+        {"name": "Beuwolf", "race": "Man", "weapon": "Battle-axe", "health": "100", "level": "5"},
+        {"name": "Saroman", "race": "Wizard", "weapon": "Magic staff", "health": "100", "level":"5"}
+    ]
+}
