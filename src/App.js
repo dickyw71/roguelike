@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
+import * as Board from './board.js'; 
 
 class App extends Component {
   constructor(props) {
     super(props);
+    this.gridWidth = 20;
+    this.gridHeight = 20;
     this.state = {
       countX: 90,
-      countY: 55     
+      countY: 55,
+      board: Board.generateEmpty(this.gridWidth, this.gridHeight)     
     }
 
     this._heroDirection = this._heroDirection.bind(this);
@@ -45,17 +49,17 @@ class App extends Component {
     let _translateHero = "translate(" + this.state.countX + " " + this.state.countY + ")"; 
     return (
       <div className="GameContainer">
-        <svg className="MessagesContainer" xmlns="http://www.w3.org/2000/svg" width="300" height="100" viewBox="0 0 300 100" role="presentation">
+        <svg className="MessagesContainer" xmlns="http://www.w3.org/2000/svg" role="presentation">
           <g>
-            <text className="Messages" fill="black" transform={_translateMessages} fontSize="35">Messages will go here.</text>
+            <text className="Messages" fill="black" transform={_translateMessages}>Messages will go here.</text>
           </g>
         </svg>
-        <svg className="MapContainer" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" role="presentation">
+        <svg className="MapContainer" xmlns="http://www.w3.org/2000/svg" role="presentation">
           <g>
-            <text className="Hero" fill="white" transform={_translateHero}>@</text>
+            <text className="Hero" fill="pink" transform={_translateHero}>@</text>
           </g>
         </svg>  
-        <svg className="StatusContainer" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" role="presentation">
+        <svg className="StatusContainer" xmlns="http://www.w3.org/2000/svg" role="presentation">
           <g>
             <text className="Status" fill="white">XP Health</text>
           </g>
