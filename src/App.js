@@ -6,8 +6,8 @@ import DungeonGrid from './dungeon.js';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.gridWidth = 20;
-    this.gridHeight = 20;
+    this.gridWidth = 40;
+    this.gridHeight = 40;
     this.state = {
       countX: 90,
       countY: 55,
