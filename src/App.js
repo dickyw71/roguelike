@@ -15,10 +15,19 @@ class App extends Component {
     }
 
     this._heroDirection = this._heroDirection.bind(this);
+    this.toggleCell = this.toggleCell.bind(this);
   }
 
   componentDidMount() { 
     window.addEventListener("keydown", this._heroDirection, false);
+  }
+
+  toggleCell(cell) {
+    // find cell in board and update
+    console.log("In ToggleCell");
+    let delta = this.state.board;
+    delta[cell.y][cell.x].isAlive ? delta[cell.y][cell.x].isAlive = false : delta[cell.y][cell.x].isAlive = true;
+    this.setState({ board: delta});
   }
 
   _heroDirection(e) {
@@ -58,7 +67,7 @@ class App extends Component {
         <svg className="MapContainer" xmlns="http://www.w3.org/2000/svg" role="presentation">
           <g>
             <text className="Hero" fill="pink" transform={_translateHero}>@</text>
-            <DungeonGrid board={this.state.board} />
+            <DungeonGrid board={this.state.board} toggleCell={this.toggleCell} />
           </g>
         </svg>  
         <svg className="StatusContainer" xmlns="http://www.w3.org/2000/svg" role="presentation">

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './dungeon.js';
 
 class DungeonGrid extends Component {
     constructor(props) {
@@ -29,10 +30,19 @@ class DungeonCell extends Component {
         super(props);
         this.state = { 
             isAlive: this.props.cell.isAlive, 
-            class: this.props.cell.isAlive ? "cell infant" : "cell" };
+            fill: this.props.cell.isAlive ? "#f00" : "#000" };
         this.toggle = this.toggle.bind(this);
     }    
 
+    componentWillReceiveProps(nextProps) {
+        if(nextProps.cell.isAlive !== this.state.isAlive) {
+            this.setState({   
+                    isAlive: nextProps.cell.isAlive, 
+                    fill: nextProps.cell.isAlive ? "#f00" : "#000" 
+                });
+        }
+    }
+    
     toggle() {
         // toggle cell state
        this.props.toggleCell(this.props.cell);
@@ -41,16 +51,16 @@ class DungeonCell extends Component {
     render() {
         return (
             <rect 
-                className={this.state.class} 
+                className="cell" 
                 x={this.props.cell.x*10} 
                 y={this.props.cell.y*10} 
                 width={"10px"} 
                 height={"10px"} 
-                fill="black"
-                stroke="gold"
-                strokeWidth="1px">
+                fill={this.state.fill}
+                stroke={"gold"}
+                strokeWidth={"1px"}
                 onClick={this.toggle}
-            </rect>
+            ></rect>
         )
     }
 }
