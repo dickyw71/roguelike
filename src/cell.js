@@ -3,6 +3,7 @@ class Cell {
         this.x = x;
         this.y = y;
         this.isAlive = false;
+        this.isHero = false;
     }  
 }
 
