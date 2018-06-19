@@ -16,6 +16,7 @@ class App extends Component {
 
     this._heroDirection = this._heroDirection.bind(this);
     this.toggleCell = this.toggleCell.bind(this);
+    this.logBoardState = this.logBoardState.bind(this);
   }
 
   componentDidMount() { 
@@ -24,10 +25,13 @@ class App extends Component {
 
   toggleCell(cell) {
     // find cell in board and update
-    console.log("In ToggleCell");
     let delta = this.state.board;
     delta[cell.y][cell.x].isAlive ? delta[cell.y][cell.x].isAlive = false : delta[cell.y][cell.x].isAlive = true;
     this.setState({ board: delta});
+  }
+
+  logBoardState() {
+    console.log(this.state.board);
   }
 
   _heroDirection(e) {
@@ -59,11 +63,12 @@ class App extends Component {
     let _translateHero = "translate(" + this.state.countX + " " + this.state.countY + ")"; 
     return (
       <div className="GameContainer">
-        <svg className="MessagesContainer" xmlns="http://www.w3.org/2000/svg" role="presentation">
+        <button onClick={this.logBoardState}>Capture board</button>
+        {/* <svg className="MessagesContainer" xmlns="http://www.w3.org/2000/svg" role="presentation">
           <g>
             <text className="Messages" fill="black" transform={_translateMessages}>Messages will go here.</text>
           </g>
-        </svg>
+        </svg> */}
         <svg className="MapContainer" xmlns="http://www.w3.org/2000/svg" role="presentation">
           <g>
             <text className="Hero" fill="pink" transform={_translateHero}>@</text>
