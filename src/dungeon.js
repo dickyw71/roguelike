@@ -12,6 +12,7 @@ class DungeonGrid extends Component {
                 return <DungeonCell 
                             key={cell.x.toString() + "," + cell.y.toString()} 
                             cell={cell} 
+                            heroPosition={this.props.heroPosition}
                             toggleCell={this.props.toggleCell}
                         />
             })
