@@ -11,7 +11,9 @@ class App extends Component {
     this.state = {
       countX: 90,
       countY: 55,
-      board: Board.generateEmpty(this.gridWidth, this.gridHeight)     
+      board: Board.generateEmpty(this.gridWidth, this.gridHeight),
+      hero: { health: 100, XP: 0, level: 1, weapon: "Dagger", 
+        position: {x: this.gridWidth/2, y: this.gridHeight/2 } }     
     }
 
     this._heroDirection = this._heroDirection.bind(this);
@@ -72,7 +74,7 @@ class App extends Component {
         <svg className="MapContainer" xmlns="http://www.w3.org/2000/svg" role="presentation">
           <g>
             <text className="Hero" fill="pink" transform={_translateHero}>@</text>
-            <DungeonGrid board={this.state.board} toggleCell={this.toggleCell} />
+            <DungeonGrid board={this.state.board} heroPosition={this.state.hero.position} toggleCell={this.toggleCell} />
           </g>
         </svg>  
         <svg className="StatusContainer" xmlns="http://www.w3.org/2000/svg" role="presentation">
