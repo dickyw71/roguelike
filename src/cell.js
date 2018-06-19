@@ -1,8 +1,8 @@
 class Cell {
-    constructor(x, y, isAlive) {
+    constructor(x, y) {
         this.x = x;
         this.y = y;
-        this.isAlive = isAlive;
+        this.isAlive = false;
     }  
 }
 
