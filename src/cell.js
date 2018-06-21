@@ -4,6 +4,9 @@ class Cell {
         this.y = y;
         this.isAlive = false;
         this.isHero = false;
+        this.isWall = false;
+        this.isWeapon = false;
+        this.isEnemy = false;
     }  
 }
 
