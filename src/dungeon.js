@@ -9,10 +9,10 @@ class DungeonGrid extends Component {
         // generate board components
         let gridOfCells = this.props.board.map( (rowOfCells) => {
             return rowOfCells.map((cell) => {
+                if(cell.x === this.props.heroPosition.x && cell.y === this.props.heroPosition.y) { cell.isHero = true }
                 return <DungeonCell 
                             key={cell.x.toString() + "," + cell.y.toString()} 
                             cell={cell} 
-                            heroPosition={this.props.heroPosition}
                             toggleCell={this.props.toggleCell}
                         />
             })
@@ -57,7 +57,7 @@ class DungeonCell extends Component {
                 y={this.props.cell.y*10} 
                 width={"10px"} 
                 height={"10px"} 
-                fill={this.state.fill}
+                fill={this.props.cell.isHero ? "#FFF" : this.state.fill}
                 stroke={"gold"}
                 strokeWidth={"1px"}
                 onClick={this.toggle}
